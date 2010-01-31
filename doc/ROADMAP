@@ -1,0 +1,41 @@
+This file documents the project's current status and planned future features:
+
+ v0.0.9 (current version):
+   - No user interface or controllers as yet.
+   - Mail server support: POP3 only.
+   - Mail server authentication method support: Plain/logon only.
+   - Password wallet backend support: File only.
+     (An issue with the encryption method used remains.)
+   - Automated regression test cases using PHPUnit.
+     (Coverage: all utility modules, most of model/persistence.php.)
+
+ v1.0.0:
+   - Features:
+     - OpenID-compatible authentication.
+     - Multiple mailbox accounts.
+     - Encrypted password wallet to store mailbox passwords and other details.
+   - Mail server support: POP3 only.
+   - Mail server authentication method support: Plain/logon only.
+   - Password wallet backend support: File only.
+   - Automated regression test cases using PHPUnit.
+
+ v1.1.0:
+   - Features:
+     - AJAX mailbox checking.
+
+ v1.2.0:
+   - Mail server support: POP3/POP3S
+   - Mail server authentication method support:
+     - Plain/login, APOP, CRAM-MD5, Digest-MD5, NTLM.
+
+ v1.3.0:
+   - Features:
+     - Paranoid mode.
+       (Any plaintext passwords are hashed using Javascript, so that the server
+        never sees the plaintext of any supplied passwords.)
+
+ v1.4.0:
+   - Mail server support: POP3/POP3S/IMAP/IMAPS
+
+ v1.5.0:
+   - Password wallet backend support: File and DBAPI.
