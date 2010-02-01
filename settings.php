@@ -39,4 +39,4 @@
  * Please change this if the tests directory is no longer under the main
  * application directory.
  */
-DEFINE(APPLICATION_PATH, dirname(__FILE__);
+DEFINE(APPLICATION_PATH, dirname(__FILE__));
