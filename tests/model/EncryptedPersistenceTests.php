@@ -83,14 +83,29 @@ class EncryptedPersistenceTests extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test where a single encrypt-decrypt cycle.
+     * Test a single encrypt-decrypt cycle.
      *
      * @depends testEncryptData
      */
-    public function testEncryptDecryptCycle()
+    public function testSingleEncryptDecryptCycle()
     {
-        $store = new EncryptedPersistence('', false);
+        $store = new EncryptedPersistence('', false);        
         $encryptedData = $store->encryptData('abcd');
+        $decryptedData = $store->decryptData($encryptedData);
+        $this->assertEquals('abcd', $decryptedData);
+    }        
+
+    /**
+     * Test a double encrypt-decrypt cycle.
+     *
+     * @depends testSingleEncryptDecryptCycle
+     */
+    public function testDoubleEncryptDecryptCycle()
+    {
+        $store = new EncryptedPersistence('', false);        
+        $encryptedData = $store->encryptData('abcd');
+        $decryptedData = $store->decryptData($encryptedData);
+        $encryptedData = $store->encryptData($decryptedData);
         $decryptedData = $store->decryptData($encryptedData);
         $this->assertEquals('abcd', $decryptedData);
     }        
