@@ -123,7 +123,6 @@ class EncryptedPersistence implements Persistence
      *
      * @var int
      */
-    //const encryptionMode = 'cfb';
     const encryptionMode = 'ecb';
 
     /**
@@ -153,6 +152,8 @@ class EncryptedPersistence implements Persistence
 
         // Get an appropriate initialization vector for the current cipher
         // type.
+        // (Not strictly necessary for the current ECB mode, but good
+        //  cryptographic practice.)
         $ivsize = mcrypt_enc_get_iv_size($this->encryptionResource);
         $this->encryptionIV = mcrypt_create_iv($ivsize, MCRYPT_RAND);
 
@@ -171,7 +172,7 @@ class EncryptedPersistence implements Persistence
         }
 
         // Mangle the hashed key down to the correct keysize, and store it for
-        //later.
+        // later.
         $this->encryptionKey = substr($hashedKey, 0, $keysize);
 
         // Initialize the encryption resource.
@@ -204,10 +205,15 @@ class EncryptedPersistence implements Persistence
         $this->initializeEncryptionResource();
 
         // Now decrypt the decoded data.
-        $decryptedData = mdecrypt_generic($this->encryptionResource, $decodedData);
+        $decryptedData = mdecrypt_generic($this->encryptionResource,
+                                          $decodedData);
 
         // Deinitialize the encryption resource for this pass.
         $this->deinitializeEncryptionResource();
+
+        // Trim off any null padding added to the end of the string, as this
+        // confuses hex2bin.
+        $decryptedData = rtrim($decryptedData, "\0");
 
         // Give the decrypted data another hex decode, as the encoding process
         // should have hex encoded the input binary string before passing it to be
@@ -244,7 +250,8 @@ class EncryptedPersistence implements Persistence
         $this->initializeEncryptionResource();
 
         // Now encrypt the encoded data.
-        $encryptedData = mcrypt_generic($this->encryptionResource, $encodedData);
+        $encryptedData = mcrypt_generic($this->encryptionResource,
+                                        $encodedData);
 
         // Deinitialize the encryption resource for this pass.
         $this->deinitializeEncryptionResource();
