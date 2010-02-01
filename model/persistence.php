@@ -388,7 +388,7 @@ class EncryptedFilePersistence extends EncryptedPersistence
         $filename = $this->generateFilenameFromKey($key);
 
         // Construct the full path to the file storing the value.
-        $valuePath = $this->storePath + '/' + $filename;
+        $valuePath = $this->storePath . '/' . $filename;
 
         // Check whether a file exists under the generated filename.
         if (!is_readable($valuePath))
@@ -489,7 +489,7 @@ class EncryptedFilePersistence extends EncryptedPersistence
         $filename = $this->generateFilenameFromKey($key);
 
         // Construct the full path to the file storing the value.
-        $valuePath = $this->storePath + '/' + $filename;
+        $valuePath = $this->storePath . '/' . $filename;
 
         // Check whether a file exists under the generated filename.
         if (realpath($valuePath))
@@ -524,7 +524,7 @@ class EncryptedFilePersistence extends EncryptedPersistence
 
         // Construct the full path to the file that will store the value from
         // the store path.
-        $valuePath = $this->storePath + '/' + $filename;
+        $valuePath = $this->storePath . '/' . $filename;
 
         // Open the value store file for writing binary data.
         try
