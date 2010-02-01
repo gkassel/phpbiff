@@ -52,6 +52,15 @@ interface Persistence
     // Instance methods.
 
     /**
+     * Function to clear a previously stored value for the given key.
+     * Returns true on success, false otherwise.
+     *
+     * @param string $key The key under which the value is stored.
+     * @return bool       Whether the clear operation was successful.
+     */
+    public function clear($key);
+
+    /**
      * Function to retrieve the stored value for the given key.
      * Returns the stored object, or null if the value can't be retrieved.
      *
@@ -186,6 +195,20 @@ class EncryptedPersistence implements Persistence
     {
         // Close the encryption resource.
         mcrypt_module_close($this->encryptionResource);
+    }
+
+    /**
+     * Function to clear a previously stored value for the given key.
+     * Returns true on success, false otherwise.
+     * Implementation to be supplied by inheriting classes.
+     *
+     * @abstract
+     * @param string $key The key under which the value is stored.
+     * @return bool       Whether the clear operation was successful.
+     */
+    public function clear($key)
+    {
+        throw new RuntimeException("Not implemented by this class.");
     }
 
     /**
@@ -375,6 +398,41 @@ class EncryptedFilePersistence extends EncryptedPersistence
 
         // Set up the filename cache.
         $this->filenameCache = array();
+    }
+
+    /**
+     * Function to clear a previously stored value for the given key.
+     * Returns true on success, false otherwise.
+     *
+     * @param string $key The key under which the value is stored.
+     * @return bool       Whether the clear operation was successful.
+     */
+    public function clear($key)
+    {
+        // Get the filename that maps to the given key.
+        $filename = $this->generateFilenameFromKey($key);
+
+        // Construct the full path to the file storing the value.
+        $valuePath = $this->storePath . '/' . $filename;
+
+        // Check whether a file exists under the generated filename.
+        if (!is_readable($valuePath))
+        {
+            // No such file exists.
+            // Return true, the file has already been cleared.
+            return true;
+        }
+
+        // Remove the value file.
+        try
+        {
+            unlink($valuePath);
+        } catch (Exception $e) {
+            return false;
+        }
+
+        // If we're here, the clear succeeded.
+        return true;
     }
 
     /**
