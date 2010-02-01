@@ -85,6 +85,23 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test a clear on an empty store.
+     *
+     * @depends testConstructor
+     */
+    public function testClearEmptyStore()
+    {
+        $store = new EncryptedFilePersistence('', false, $this->storePath);
+        // The key shouldn't already exist.
+        $this->assertEquals(false, $store->hasKey('testkey'));
+        $result = $store->clear('testkey');
+        // The key should have been cleared successfully.
+        $this->assertEquals(true, $result);
+        // The key should still not exist.
+        $this->assertEquals(false, $store->hasKey('testkey'));
+    }
+
+    /**
      * Test a fetch on an empty store.
      *
      * @depends testConstructor
@@ -94,6 +111,18 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
         $store = new EncryptedFilePersistence('', false, $this->storePath);
         $result = $store->fetch('testkey');
         $this->assertEquals(null, $result);
+    }
+
+    /**
+     * Test a hasKey on an empty store.
+     *
+     * @depends testHasKeyNullKey
+     */
+    public function testHasKeyEmptyStore()
+    {
+        $store = new EncryptedFilePersistence('', false, $this->storePath);
+        $result = $store->hasKey('testkey');
+        $this->assertEquals(false, $result);
     }
 
     /**
@@ -112,6 +141,7 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
      * Test a single store and hasKey on an empty store.
      *
      * @depends testStoreSingle
+     * @depends testHasKeyNullKey
      */
     public function testStoreSingleHasKey()
     {
@@ -119,6 +149,26 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
         $this->assertEquals(true, $store->store('testkey', 'testvalue'));
         $result = $store->hasKey('testkey');
         $this->assertEquals(true, $result);
+    }
+
+    /**
+     * Test a clear after a single store on an empty store.
+     *
+     * @depends testFetchEmptyStore
+     */
+    public function testStoreSingleClear()
+    {
+        $store = new EncryptedFilePersistence('', false, $this->storePath);
+        // Store a value first.
+        $this->assertEquals(true, $store->store('testkey', 'testvalue'));
+        // The key should exist.
+        $this->assertEquals(true, $store->hasKey('testkey'));
+        // Clear the key.
+        $result = $store->clear('testkey');
+        // The key should have been cleared successfully.
+        $this->assertEquals(true, $result);
+        // The key should now not exist.
+        $this->assertEquals(false, $store->hasKey('testkey'));
     }
 
     /**
@@ -145,7 +195,76 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
         $this->assertEquals(true, $store->store('testkey', 'testvalue'));
         $result = $store->fetch('testkey');
         $this->assertEquals('testvalue', $result);
-        $this->assertEquals(true, $store->store('testkey', 'testvalue'));
+        $result = $store->hasKey('testkey');
+        $this->assertEquals(true, $result);
+    }
+
+    /**
+     * Test multiple stores, fetches, and has key tests on an empty store.
+     *
+     * @depends testStoreSingleFetchSingleHasKey
+     */
+    public function testMultipleStoreFetchHasKey()
+    {
+        $store = new EncryptedFilePersistence('', false, $this->storePath);
+        // Store, and fetch key 1.
+        $this->assertEquals(true, $store->store('testkey1', 'testvalue1'));
+        $result = $store->fetch('testkey1');
+        $this->assertEquals('testvalue1', $result);
+        // Store, and fetch key 2.
+        $this->assertEquals(true, $store->store('testkey2', 'testvalue2'));
+        $result = $store->fetch('testkey2');
+        $this->assertEquals('testvalue2', $result);
+        // Store, and fetch key 3.
+        $this->assertEquals(true, $store->store('testkey3', 'testvalue3'));
+        $result = $store->fetch('testkey3');
+        $this->assertEquals('testvalue3', $result);
+        // Test all the keys.
+        $result = $store->hasKey('testkey1');
+        $this->assertEquals(true, $result);
+        $result = $store->hasKey('testkey2');
+        $this->assertEquals(true, $result);
+        $result = $store->hasKey('testkey3');
+        $this->assertEquals(true, $result);
+        // Test a non-existant key.
+        $result = $store->hasKey('testkey4');
+        $this->assertEquals(false, $result);
+    }
+
+    /**
+     * Test multiple stores, fetches, clears, and has key tests on an empty
+     * store.
+     *
+     * @depends testMultipleStoreFetchHasKey
+     */
+    public function testMultipleStoreClearFetchHasKey()
+    {
+        $store = new EncryptedFilePersistence('', false, $this->storePath);
+        // Store, and fetch key 1.
+        $this->assertEquals(true, $store->store('testkey1', 'testvalue1'));
+        $result = $store->fetch('testkey1');
+        $this->assertEquals('testvalue1', $result);
+        // Store, fetch, and clear key 2.
+        $this->assertEquals(true, $store->store('testkey2', 'testvalue2'));
+        $result = $store->fetch('testkey2');
+        $this->assertEquals('testvalue2', $result);
+        $this->assertEquals(true, $store->clear('testkey2'));
+        // Store and fetch key 2 again.
+        $this->assertEquals(true, $store->store('testkey2', 'testvalue2'));
+        $result = $store->fetch('testkey2');
+        $this->assertEquals('testvalue2', $result);
+        // Store, fetch, and clear key 3.
+        $this->assertEquals(true, $store->store('testkey3', 'testvalue3'));
+        $result = $store->fetch('testkey3');
+        $this->assertEquals('testvalue3', $result);
+        $this->assertEquals(true, $store->clear('testkey3'));
+        // Test all the keys.
+        $result = $store->hasKey('testkey1');
+        $this->assertEquals(true, $result);
+        $result = $store->hasKey('testkey2');
+        $this->assertEquals(true, $result);
+        $result = $store->hasKey('testkey3');
+        $this->assertEquals(false, $result);
     }
 }
 
