@@ -47,7 +47,8 @@ function hex2bin($hex)
     $len = strlen($hex);
     if (($len % 2) == 1)
     {
-        throw new LogicException("Invalid hex string given.");
+        $message = "Hex string of an invalid length ($len) given.";
+        throw new LogicException($message);
     }
     $stepLimit = $len - 1;
     for ($index = 0; $index < $stepLimit; $index += 2)
@@ -55,7 +56,12 @@ function hex2bin($hex)
         $hexit = substr($hex, $index, 2);
         if (!preg_match("/^[0-9ABCDEF]+$/i", $hexit))
         {
-            throw new LogicException("Invalid hex digit '$hexit' given,");
+            // Calculate the ASCII values of the components of the hexit digit.
+            $asciiValue = ord($hexit[0]) . '/' . ord($hexit[1]);
+            // Raise a LogicException listing the raw and ASCII value of the
+            // invalid hexit.
+            $message = "Invalid hex digit '$asciiValue'/$hexit' given,";
+            throw new LogicException($message);
         }
         $binary .= chr(hexdec($hexit));
     }
