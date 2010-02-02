@@ -108,7 +108,53 @@ class EncryptedPersistenceTests extends PHPUnit_Framework_TestCase
         $encryptedData = $store->encryptData($decryptedData);
         $decryptedData = $store->decryptData($encryptedData);
         $this->assertEquals('abcd', $decryptedData);
-    }        
-}
+    }
 
+    /**
+     * Test the unimplemented clear function. (For coverage completeness.)
+     *
+     * @depends testConstructor
+     * @expectedException RuntimeException
+     */
+    public function testClear()
+    {
+        $store = new EncryptedPersistence('', false);
+        $store->clear('testkey');
+    }
+
+    /**
+     * Test the unimplemented fetch function. (For coverage completeness.)
+     *
+     * @depends testConstructor
+     * @expectedException RuntimeException
+     */
+    public function testFetch()
+    {
+        $store = new EncryptedPersistence('', false);
+        $store->fetch('testkey');
+    }
+
+    /**
+     * Test the unimplemented hasKey function. (For coverage completeness.)
+     *
+     * @depends testConstructor
+     * @expectedException RuntimeException
+     */
+    public function testHasKey()
+    {
+        $store = new EncryptedPersistence('', false);
+        $store->hasKey('testkey');
+    }
+    /**
+     * Test the unimplemented store function. (For coverage completeness.)
+     *
+     * @depends testConstructor
+     * @expectedException RuntimeException
+     */
+    public function testStore()
+    {
+        $store = new EncryptedPersistence('', false);
+        $store->store('testkey', 'testvalue');
+    }
+}
 ?>
