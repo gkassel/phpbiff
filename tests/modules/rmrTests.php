@@ -129,6 +129,82 @@ class rmrTests extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test the directory with single file failed delete case.
+     *
+     * @depends testSingleFile
+     */
+    public function testDirectoryWithSingleFileFailedDelete()
+    {
+        // Create a directory.
+        $testPath = dirname(__FILE__) . '/tmpdata';
+        mkdir($testPath);
+
+        // Create a file 'a' within the directory.
+        $testPathA = dirname(__FILE__) . '/tmpdata/a';
+        $fileDescriptor = fopen($testPathA, 'w+');
+        fwrite($fileDescriptor, 'test');
+        fclose($fileDescriptor);
+
+        // Remove the write permission from the directory.
+        chmod($testPath, 0500);
+
+        // Try to delete the directory.
+        $result = rmr($testPath);
+
+        // Test continued existance and clean up after.
+        $this->assertEquals(false, $result);
+        if (file_exists($testPathA))
+        {
+            // Replace the write permission on the directory.
+            chmod($testPath, 0700);
+            unlink($testPathA);
+            if (file_exists($testPath))
+            {
+                rmdir($testPath);
+            }
+        }
+    }
+
+    /**
+     * Test the directory with single file failed delete case.
+     *
+     * @depends testDirectoryWithSingleFileFailedDelete
+     */
+    public function testDirectoryWithSingleDirectoryFailedDelete()
+    {
+        // Create a directory.
+        $testPath = dirname(__FILE__) . '/tmpdata';
+        mkdir($testPath);
+
+        // Create a directory 'a' within the top directory.
+        $testPathA = dirname(__FILE__) . '/tmpdata/a';
+        mkdir($testPathA);
+
+        // Remove the write permission from the top directory.
+        chmod($testPath, 0500);
+
+        // Remove the write permission from the 'a' directory.
+        chmod($testPathA, 0500);
+
+        // Try to delete the directory.
+        $result = rmr($testPath);
+
+        // Test continued existance and clean up after.
+        $this->assertEquals(false, $result);
+        if (file_exists($testPathA))
+        {
+            // Replace the write permission on the directories.
+            chmod($testPath, 0700);
+            chmod($testPathA, 0700);
+            rmdir($testPathA);
+            if (file_exists($testPath))
+            {
+                rmdir($testPath);
+            }
+        }
+    }
+
+    /**
      * Test the directory with multiple files case.
      *
      * @depends testDirectoryWithSingleFile
