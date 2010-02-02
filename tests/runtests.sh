@@ -1,2 +1,2 @@
 #!/bin/sh
-phpunit AllTests
+phpunit --coverage-html coverage AllTests
