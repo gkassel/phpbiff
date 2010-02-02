@@ -50,7 +50,12 @@ function rmr($path)
     // If we have a file or a link, unlink it.
     if (is_file($path) || is_link($path))
     {
-        return unlink($path);        
+        try
+        {
+            return unlink($path);
+        } catch (Exception $e) {
+            return false;
+        }
     } else {
         // If we have a directory, recurse into it.
         foreach (scandir($path) as $subpath)
@@ -60,15 +65,19 @@ function rmr($path)
             {
                 continue;
             }
-            // If rmr called recursively on this subpath fails,
-            // indicate failure up the chain.
-            if (!rmr($path . '/'. $subpath))
-            {
+            // If rmr called recursively on this subpath fails, indicate
+            // failure up the chain.
+            if (!rmr($path . '/' . $subpath)) {
                 return false;
             }
         }
         // Now that the directory has been emptied, delete it.
-        return rmdir($path);
+        try
+        {
+            return rmdir($path);
+        } catch (Exception $e) {
+            return false;
+        }
     }
 }
 ?>
