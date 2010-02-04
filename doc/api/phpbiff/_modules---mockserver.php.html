@@ -3,13 +3,13 @@
   <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
-			<title>Docs for page hex2binTests.php</title>
+			<title>Docs for page mockserver.php</title>
 			<link rel="stylesheet" href="../media/stylesheet.css" />
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
 			<div class="page-body">			
-<h2 class="file-name">/tests/modules/hex2binTests.php</h2>
+<h2 class="file-name">/modules/mockserver.php</h2>
 
 <a name="sec-description"></a>
 <div class="info-box">
@@ -21,11 +21,11 @@
 												</div>
 	<div class="info-box-body">	
 		<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Test case suite for the hex2bin function.</p>
+<p class="short-description">Mock server classes, for use in testing mail server connection code.</p>
 	<ul class="tags">
 				<li><span class="field">author:</span> Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net</li>
 				<li><span class="field">copyright:</span> Copyright (c) Geoff Kassel, 2010. All rights reserved.</li>
-				<li><span class="field">license:</span> <a href="http://www.gnu.org/copyleft/gpl.html">GPL-2</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL-2.1</a></li>
 			</ul>
 		
 			</div>
@@ -47,10 +47,26 @@
 				</tr>
 								<tr>
 					<td style="padding-right: 2em; vertical-align: top">
-						<a href="../phpbiff/hex2binTests.html">hex2binTests</a>
+						<a href="../phpbiff/ServerException.html">ServerException</a>
 					</td>
 					<td>
-											
+											Exception to indicate problems with the server.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top">
+						<a href="../phpbiff/MockServer.html">MockServer</a>
+					</td>
+					<td>
+											Interface class for mock servers.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top">
+						<a href="../phpbiff/BaseMockServer.html">BaseMockServer</a>
+					</td>
+					<td>
+											Concrete class that defines attributes and methods common to all mock  servers.
 										</td>
 				</tr>
 							</table>
@@ -66,46 +82,19 @@
 				|						<span class="disabled">Includes</span>
 														</div>
 		<div class="info-box-body">	
-			<a name="_PHPUnit/Framework_php"><!-- --></a>
-<div class="evenrow">
-	
-	<div>
-		<span class="include-title">
-			<span class="include-type">require_once</span>
-			(<span class="include-name">'PHPUnit/Framework.php'</span>)
-			(line <span class="line-number">35</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	
-</div>
-<a name="_dirname(__FILE__)_/__/testsettings_php"><!-- --></a>
+			<a name="_dirname(__FILE__)_/__/settings_php"><!-- --></a>
 <div class="oddrow">
 	
 	<div>
 		<span class="include-title">
 			<span class="include-type">require_once</span>
-			(<span class="include-name">dirname(__FILE__).'/../testsettings.php'</span>)
-			(line <span class="line-number">36</span>)
+			(<span class="include-name">dirname(__FILE__).'/../settings.php'</span>)
+			(line <span class="line-number">35</span>)
 		</span>
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
-	
-</div>
-<a name="_APPLICATION_PATH_/modules/hex2bin_php"><!-- --></a>
-<div class="evenrow">
-	
-	<div>
-		<span class="include-title">
-			<span class="include-type">require_once</span>
-			(<span class="include-name">APPLICATION_PATH.'/modules/hex2bin.php'</span>)
-			(line <span class="line-number">37</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Import the application settings.</p>
 	
 </div>
 		</div>
@@ -115,7 +104,7 @@
 	
 	
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 31 Jan 2010 11:50:03 +1000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Thu, 04 Feb 2010 12:38:01 +1000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>
