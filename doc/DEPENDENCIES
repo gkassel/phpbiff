@@ -1,5 +1,5 @@
 phpbiff has the following dependencies:
- - >=PHP 5.2.12 with the filter, hash, and mcrypt modules installed and
+ - >=PHP 5.2.12 with the filter, hash, mcrypt, and sockets modules installed and
    enabled.
  - >=mcrypt-2.6.7 (for the PHP mcrypt module.)
  - A server filesystem that supports flock.
