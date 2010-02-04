@@ -2,13 +2,10 @@
 /*
  * Copyright (c) Geoff Kassel, 2010. All rights reserved.
  *
- * This file may be distributed and/or modified under the terms of the
- * "GNU General Public License" version 2 as published by the Free
- * Software Foundation and appearing in the file LICENSE.GPL included in
- * the packaging of this file.
- *
- * The "GNU General Public License" (GPL) is available at
- * http://www.gnu.org/copyleft/gpl.html.
+ * This file is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
  *
  * IN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,
  * SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF
@@ -28,12 +25,13 @@
  *
  * @author Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
  * @copyright Copyright (c) Geoff Kassel, 2010. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GPL-2
+ * @license http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @package phpbiff
  */
 
 require_once('PHPUnit/Framework.php');
 require_once(dirname(__FILE__) . '/../testsettings.php');
+require_once(dirname(__FILE__) . '/BaseMockServerTests.php');
 require_once(dirname(__FILE__) . '/hex2binTests.php');
 require_once(dirname(__FILE__) . '/rmrTests.php');
 
@@ -47,6 +45,7 @@ class ModuleTests
     public static function suite()
     {
         $suite = new PHPUnit_Framework_TestSuite('phpbiff - module tests');
+        $suite->addTestSuite('BaseMockServerTests');
         $suite->addTestSuite('hex2binTests');
         $suite->addTestSuite('rmrTests');
         return $suite;
