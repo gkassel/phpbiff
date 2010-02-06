@@ -152,9 +152,9 @@ class EncryptedPersistence implements Persistence
         $this->isEncryptionKeyHashed = $isEncryptionKeyHashed;
 
         // Open the mcrypt module for the current cipher type and mode.
-        $this->encryptionResource =
-            mcrypt_module_open(self::cipherType, '',
-                               self::encryptionMode, '');
+        $this->encryptionResource = mcrypt_module_open(self::cipherType, '',
+                                                       self::encryptionMode,
+                                                       '');
 
         // Get an appropriate initialization vector for the current cipher
         // type.
