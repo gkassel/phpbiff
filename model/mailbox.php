@@ -37,7 +37,7 @@ require_once(dirname(__FILE__) . '/../settings.php');
 /**
  * Import the server connection classes.
  */
-require(APPLICATION_PATH . '/model/serverconnection.php');
+require_once(APPLICATION_PATH . '/model/serverconnection.php');
 
 /**
  * Class to define and manipulate mailboxes.
@@ -318,7 +318,7 @@ class Mailbox
     /**
      * Sets the mailbox display order to that given.
      *
-     * @param int $checkFrequency The new mailbox check frequency.
+     * @param int $displayOrder The new mailbox display order.
      */
     public function setDisplayOrder($displayOrder)
     {
@@ -326,9 +326,19 @@ class Mailbox
     }
 
     /**
+     * Sets the server hostname to that given.
+     *
+     * @param int $hostname The new server hostname.
+     */
+    public function setHostname($hostname)
+    {
+        $this->hostname = $hostname;
+    }
+
+    /**
      * Sets the password to that given.
      *
-     * @param string $checkFrequency The new password.
+     * @param string $password The new password.
      */
     public function setPassword($password)
     {
@@ -430,11 +440,9 @@ class Mailbox
         {
             // Establish a server connection with the given settings for this
             // mailbox.
-            $this->connection =
-                $serverConnectionFactory->createConnection($this->protocol,
-                                                           $this->hostname,
-                                                           $this->port,
-                                                           $this->timeout);
+            $this->connection = $serverConnectionFactory->createConnection(
+                                    $this->protocol, $this->hostname,
+                                    $this->port, $this->timeout);
             // Log into the server.
             $this->connection->login($this->username, $this->password,
                                      $this->authenticationMethod);
