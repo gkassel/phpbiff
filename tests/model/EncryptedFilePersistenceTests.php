@@ -70,6 +70,15 @@ class EncryptedFilePersistenceTests extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test the constructor method with an invalid store path.
+     */
+    public function testConstructorInvalidStorePath()
+    {
+        $madeUpPath = APPLICATION_PATH . '/madeuppath/';
+        $store = new EncryptedFilePersistence('', false, $madeUpPath);
+    }
+
+    /**
      * Test where a null key is given to hasKey.
      *
      * @depends testConstructor
