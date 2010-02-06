@@ -26,7 +26,7 @@
         		<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Concrete class to handle POP3 server connections.</p>
 		<p class="notes">
-			Located in <a class="field" href="_model---serverconnection.php.html">/model/serverconnection.php</a> (line <span class="field">350</span>)
+			Located in <a class="field" href="_model---serverconnection.php.html">/model/serverconnection.php</a> (line <span class="field">352</span>)
 		</p>
 		
 				
@@ -122,22 +122,22 @@
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#loginAPOP" title="details" class="method-name">loginAPOP</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#loginCRAMMD5" title="details" class="method-name">loginCRAMMD5</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#loginDigestMD5" title="details" class="method-name">loginDigestMD5</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#loginNTLM" title="details" class="method-name">loginNTLM</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">int</span>
@@ -180,7 +180,7 @@
 		<span class="var-title">
 			<span class="var-type">string</span>
 			<span class="var-name">$serverString</span>
-						(line <span class="line-number">360</span>)
+						(line <span class="line-number">362</span>)
 		</span>
 	</div>
 
@@ -240,11 +240,14 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">378</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">380</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Creates a new POP3 server connection from the given parameters.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">POP3ServerConnection</span>
@@ -272,7 +275,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">command</span> (line <span class="line-number">421</span>)
+		<span class="method-title">command</span> (line <span class="line-number">423</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -280,6 +283,7 @@
 <p class="description"><p>Returns the server response.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> The response returned by the server.</li>
+				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -302,13 +306,14 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">isAlive</span> (line <span class="line-number">399</span>)
+		<span class="method-title">isAlive</span> (line <span class="line-number">401</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Function to determine whether a connection is still alive.</p>
 	<ul class="tags">
 				<li><span class="field">return:</span> Whether a connection is still alive.</li>
+				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -332,12 +337,15 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">login</span> (line <span class="line-number">449</span>)
+		<span class="method-title">login</span> (line <span class="line-number">454</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Function to login to the server with the given details,  using the given authentication method.</p>
 <p class="description"><p>Throws errors on different failure modes; returns True on success.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -374,18 +382,21 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">loginAPOP</span> (line <span class="line-number">504</span>)
+		<span class="method-title">loginAPOP</span> (line <span class="line-number">514</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">loginAPOP. FIXME: Implementation incomplete.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			loginAPOP
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -395,6 +406,9 @@
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$password</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$passwordFormat</span>			</li>
 				</ul>
 		
 			
@@ -403,18 +417,21 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">loginCRAMMD5</span> (line <span class="line-number">514</span>)
+		<span class="method-title">loginCRAMMD5</span> (line <span class="line-number">525</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">loginCRAMMD5. FIXME: Implementation incomplete.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			loginCRAMMD5
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -424,6 +441,9 @@
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$password</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$passwordFormat</span>			</li>
 				</ul>
 		
 			
@@ -432,18 +452,21 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">loginDigestMD5</span> (line <span class="line-number">524</span>)
+		<span class="method-title">loginDigestMD5</span> (line <span class="line-number">536</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">loginDigestMD5. FIXME: Implementation incomplete.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			loginDigestMD5
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -453,6 +476,9 @@
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$password</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$passwordFormat</span>			</li>
 				</ul>
 		
 			
@@ -461,18 +487,21 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">loginNTLM</span> (line <span class="line-number">534</span>)
+		<span class="method-title">loginNTLM</span> (line <span class="line-number">547</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">loginNTLM. FIXME: Implementation incomplete.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			loginNTLM
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$username</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$passwordFormat</span> = <span class="var-default">'plain'</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -482,6 +511,9 @@
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$password</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$passwordFormat</span>			</li>
 				</ul>
 		
 			
@@ -490,7 +522,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">messageCount</span> (line <span class="line-number">547</span>)
+		<span class="method-title">messageCount</span> (line <span class="line-number">561</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -498,6 +530,7 @@
 <p class="description"><p>Throws an exception on error; returns the count otherwise.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> Current count of messages stored on the server.</li>
+				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -521,11 +554,14 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">open</span> (line <span class="line-number">580</span>)
+		<span class="method-title">open</span> (line <span class="line-number">594</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Method to open a connection to the POP3 server, using the stored  connection details.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -548,13 +584,14 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">successfulResponse</span> (line <span class="line-number">609</span>)
+		<span class="method-title">successfulResponse</span> (line <span class="line-number">618</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Function to determine whether the given response indicates  success or failure. Returns true on success; false otherwise.</p>
 	<ul class="tags">
 				<li><span class="field">return:</span> Whether the server response indicates success.</li>
+				<li><span class="field">access:</span> protected</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -617,7 +654,7 @@
 		<span class="const-title">
 			<span class="const-name">protocol</span>
 			 = <span class="const-default"> 'pop3'</span>
-			(line <span class="line-number">367</span>)
+			(line <span class="line-number">369</span>)
 		</span>
 	</div>
 
@@ -640,7 +677,7 @@
 	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 04 Feb 2010 12:38:02 +1000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sat, 06 Feb 2010 13:37:21 +1000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>
