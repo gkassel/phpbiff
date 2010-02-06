@@ -21,7 +21,7 @@
  * Email: gkassel_at_users_dot_sourceforge_dot_net
  */
 /**
- * Test cases for the phpbiff utility modules.
+ * Test case suite for the base server conection class.
  *
  * @author Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
  * @copyright Copyright (c) Geoff Kassel, 2010. All rights reserved.
@@ -31,26 +31,16 @@
 
 require_once('PHPUnit/Framework.php');
 require_once(dirname(__FILE__) . '/../testsettings.php');
-require_once(dirname(__FILE__) . '/BaseMockServerTests.php');
-require_once(dirname(__FILE__) . '/POP3MockMailServerTests.php');
-require_once(dirname(__FILE__) . '/hex2binTests.php');
-require_once(dirname(__FILE__) . '/rmrTests.php');
+require_once(APPLICATION_PATH . '/modules/mockserver.php');
 
-class ModuleTests
+class POP3MockMailServerTests extends PHPUnit_Framework_TestCase
 {
-    public static function main()
+    /**
+     * Test the constructor method.
+     */
+    public function testConstructor()
     {
-        PHPUnit_TextUI_TestRunner::run(self::suite());
-    }
- 
-    public static function suite()
-    {
-        $suite = new PHPUnit_Framework_TestSuite('phpbiff - module tests');
-        $suite->addTestSuite('BaseMockServerTests');
-        $suite->addTestSuite('POP3MockMailServerTests');
-        $suite->addTestSuite('hex2binTests');
-        $suite->addTestSuite('rmrTests');
-        return $suite;
+        $mockServer = new POP3MockMailServer();
     }
 }
 ?>
