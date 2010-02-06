@@ -31,8 +31,8 @@
 
 require_once('PHPUnit/Framework.php');
 require_once(dirname(__FILE__) . '/../testsettings.php');
+require_once(APPLICATION_PATH . '/modules/persistence.php');
 require_once(APPLICATION_PATH . '/modules/rmr.php');
-require_once(APPLICATION_PATH . '/model/persistence.php');
 
 class EncryptedPersistenceTests extends PHPUnit_Framework_TestCase
 {
