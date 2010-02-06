@@ -1,12 +1,25 @@
 This file documents the project's current status and planned future features:
 
- v0.0.9-r4 (current version):
-   - No user interface or controllers as yet.
+ v0.1.0 (current version):
+   - Model code, but no user interface or controllers as yet.
    - Mail server support: POP3 only.
    - Mail server authentication method support: Plain/logon only.
    - Password wallet backend support: File only.
    - Automated regression test cases using PHPUnit.
-     (Coverage: all utility modules, all model code except mailbox.php.)
+
+ v0.2.0:
+   - Model and controller code without user interface.
+   - Mail server support: POP3 only.
+   - Mail server authentication method support: Plain/logon only.
+   - Password wallet backend support: File only.
+   - Automated regression test cases using PHPUnit.
+
+ v0.5.0:
+   - Operational (but basic) user interface.
+   - Mail server support: POP3 only.
+   - Mail server authentication method support: Plain/logon only.
+   - Password wallet backend support: File only.
+   - Automated regression test cases using PHPUnit.
 
  v1.0.0:
    - Features:
