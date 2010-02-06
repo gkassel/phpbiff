@@ -120,10 +120,10 @@ class BaseMockServerTests extends PHPUnit_Framework_TestCase
                 // Exit.
                 exit(0);
             }
-        } catch (ServerException $e) {
+        } catch (Exception $e) {
             // Stop the mock server, and re-raise the exception.
             $mockServer->stop();
-            throw new ServerException($e);
+            throw $e;
         }
     }
 
@@ -188,10 +188,10 @@ class BaseMockServerTests extends PHPUnit_Framework_TestCase
                 // Exit.
                 exit(0);
             }
-        } catch (ServerException $e) {
+        } catch (Exception $e) {
             // Stop the mock server, and re-raise the exception.
             $mockServer->stop();
-            throw new ServerException($e);
+            throw $e;
         }
     }
 
@@ -251,10 +251,10 @@ class BaseMockServerTests extends PHPUnit_Framework_TestCase
                 // Exit.
                 exit(0);
             }
-        } catch (ServerException $e) {
+        } catch (Exception $e) {
             // Stop the mock server, and re-raise the exception.
             $mockServer->stop();
-            throw new ServerException($e);
+            throw $e;
         }
     }
 
@@ -337,10 +337,10 @@ class BaseMockServerTests extends PHPUnit_Framework_TestCase
                 // Exit.
                 exit(0);
             }
-        } catch (ServerException $e) {
+        } catch (Exception $e) {
             // Stop the mock server, and re-raise the exception.
             $mockServer->stop();
-            throw new ServerException($e);
+            throw $e;
         }
     }
 
@@ -404,10 +404,10 @@ class BaseMockServerTests extends PHPUnit_Framework_TestCase
                 // Exit.
                 exit(0);
             }
-        } catch (ServerException $e) {
+        } catch (Exception $e) {
             // Stop the mock server, and re-raise the exception.
             $mockServer->stop();
-            throw new ServerException($e);
+            throw $e;
         }
     }
 
