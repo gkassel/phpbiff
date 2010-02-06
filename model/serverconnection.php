@@ -303,8 +303,8 @@ class BaseServerConnection implements ServerConnection
      * @param string $authenticationMethod Authentication method to use.
      * @param string $passwordFormat Format of the given password.
      */
-    function login($username, $password, $authenticationMethod = '',
-                   $passwordFormat = '')
+    public function login($username, $password, $authenticationMethod = '',
+                          $passwordFormat = '')
     {
         throw new RuntimeException("Not implemented by this class.");
     }
@@ -316,7 +316,7 @@ class BaseServerConnection implements ServerConnection
      * @abstract
      * @return int Current count of messages stored on the server.
      */
-    function messageCount()
+    public function messageCount()
     {
         throw new RuntimeException("Not implemented by this class.");
     }
@@ -325,11 +325,13 @@ class BaseServerConnection implements ServerConnection
      * Method to open a connection to the server, using the stored
      * connection details.
      */
-    function open()
+    public function open()
     {
-        if (!$this->socket = fsockopen($this->hostname, $this->port, 
-                                       &$errorno, &$errorstr, $this->timeout))
+        try
         {
+            $this->socket = fsockopen($this->hostname, $this->port, 
+                                      &$errorno, &$errorstr, $this->timeout);
+        } catch (Exception $e) {
             $message = self::protocol . " connection error: $errorno $errorstr";
             throw new ConnectionException($message);
         }
@@ -375,7 +377,7 @@ class POP3ServerConnection extends BaseServerConnection
      * @param string $port     The port of the server.
      * @param string $timeout  The connection timeout to use.
      */
-    function __construct($hostname = 'localhost', $port = 110, $timeout = 10)
+    public function __construct($hostname = 'localhost', $port = 110, $timeout = 10)
     {
         // Set attributes from the given parameters.
         $this->hostname = $hostname;
@@ -396,7 +398,7 @@ class POP3ServerConnection extends BaseServerConnection
      *
      * @return bool Whether a connection is still alive.
      */
-    function isAlive()
+    public function isAlive()
     {
 
         $result = false;
@@ -405,7 +407,7 @@ class POP3ServerConnection extends BaseServerConnection
         {
             $noopresult = $this->command("NOOP");
             $result = true;
-        } catch (ConnectionException $error) {
+        } catch (Exception $e) {
             $result = false;
         }
 
@@ -418,7 +420,7 @@ class POP3ServerConnection extends BaseServerConnection
      *
      * @return string The response returned by the server.
      */
-    function command($command)
+    public function command($command)
     {
         // Check that the socket is open.
         if (!$this->socketOpen)
@@ -426,14 +428,17 @@ class POP3ServerConnection extends BaseServerConnection
             $this->open();
         }
         
-        if(!isset($this->socket))
+        try
         {
+            $reply = '';
+            fwrite($this->socket, "$command\r\n");
+            $reply = fgets($this->socket);
+        } catch (Exception $e) {
             $message = self::protocol . " command: Connection to server lost.";
             throw new ConnectionException($message);
         }
 
-        fwrite($this->socket, "$command\r\n");        
-        return fgets($this->socket);
+        return $reply;
     }
 
     /**
@@ -446,22 +451,27 @@ class POP3ServerConnection extends BaseServerConnection
      * @param string $authenticationMethod Authentication method to use.
      * @param string $passwordFormat       Format of the given password.
      */
-    function login($username, $password, $authenticationMethod = 'plain',
-                   $passwordFormat = 'plain')
+    public function login($username, $password,
+                          $authenticationMethod = 'plain',
+                          $passwordFormat = 'plain')
     {
         switch($authenticationMethod)
         {
             case 'APOP':
-                return $this->loginAPOP($username, $password);
+                return $this->loginAPOP($username, $password,
+                                        $passwordFormat);
                 break;
             case 'CRAM-MD5':
-                return $this->loginCRAMMD5($username, $password);
+                return $this->loginCRAMMD5($username, $password,
+                                           $passwordFormat);
                 break;
             case 'DIGEST-MD5':
-                return $this->loginDigestMD5($username, $password);
+                return $this->loginDigestMD5($username, $password,
+                                             $passwordFormat);
                 break;
             case 'NTLM':
-                return $this->loginNTLM($username, $password);
+                return $this->loginNTLM($username, $password,
+                                        $passwordFormat);
                 break;
             default:
                 // Use the default of USER/PASS authentication.
@@ -501,41 +511,45 @@ class POP3ServerConnection extends BaseServerConnection
     /**
      * loginAPOP. FIXME: Implementation incomplete.
      */
-    function loginAPOP($username, $password)
+    protected function loginAPOP($username, $password,
+                                 $passwordFormat = 'plain')
     {
         $message = self::protocol . " error - APOP authentication not " .
                    "currently supported.";
-        throw new RuntimeError($message);
+        throw new RuntimeException($message);
     }
 
     /**
      * loginCRAMMD5. FIXME: Implementation incomplete.
      */
-    function loginCRAMMD5($username, $password)
+    protected function loginCRAMMD5($username, $password,
+                                    $passwordFormat = 'plain')
     {
         $message = self::protocol . " error - CRAM-MD5 authentication not " .
                    "currently supported.";
-        throw new RuntimeError($message);
+        throw new RuntimeException($message);
     }
 
     /**
      * loginDigestMD5. FIXME: Implementation incomplete.
      */
-    function loginDigestMD5($username, $password)
+    protected function loginDigestMD5($username, $password,
+                                      $passwordFormat = 'plain')
     {
         $message = self::protocol . " error - DIGEST-MD5 authentication " .
                    "not currently supported.";
-        throw new RuntimeError($message);
+        throw new RuntimeException($message);
     }
 
     /**
      * loginNTLM. FIXME: Implementation incomplete.
      */
-    function loginNTLM($username, $password)
+    protected function loginNTLM($username, $password,
+                                 $passwordFormat = 'plain')
     {
         $message = self::protocol . " error - NTLM authentication not " .
                    "currently supported.";
-        throw new RuntimeError($message);
+        throw new RuntimeException($message);
     }
 
     /**
@@ -544,7 +558,7 @@ class POP3ServerConnection extends BaseServerConnection
      *
      * @return int Current count of messages stored on the server.
      */
-    function messageCount()
+    public function messageCount()
     {
         // Make sure we're authenticated first.
         if (!$this->authenticated)
@@ -577,26 +591,21 @@ class POP3ServerConnection extends BaseServerConnection
      * Method to open a connection to the POP3 server, using the stored
      * connection details.
      */
-    function open()
+    public function open()
     {
         // Use the superclass open method to open the raw connection.
         parent::open();
 
-        // Check that the socket is open.
-        if (!$this->socketOpen)
+        try
         {
-            $this->open();
-        }
-        
-        if(!isset($this->socket))
-        {
+            // Retrieve the first response from the server, which contains the
+            // server description string.
+            // (This is needed for APOP authentication.)
+            $this->serverString = fgets($this->socket);
+        } catch (Exception $e) {
             $message = self::protocol . " command: Connection to server lost.";
             throw new ConnectionException($message);
         }
-
-        // Retrieve the first response from the server, which contains the
-        // server description string. (This is needed for APOP authentication.)
-        $this->serverString = fgets($this->socket);
     }
 
     /**
@@ -606,7 +615,7 @@ class POP3ServerConnection extends BaseServerConnection
      * @param $response Server response string, as returned from command().
      * @return bool     Whether the server response indicates success.
      */
-    function successfulResponse($response)
+    protected function successfulResponse($response)
     {
         if (ereg("^\+", $response))
         {
