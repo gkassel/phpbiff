@@ -411,4 +411,11 @@ class BaseMockServer implements MockServer
     }
 }
 
+/**
+ * Concrete class that defines a mock POP3 mail server.
+ *
+ * @package phpbiff
+ */
+class POP3MockMailServer extends BaseMockServer {}
+
 ?>
