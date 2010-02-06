@@ -35,6 +35,7 @@ require_once(dirname(__FILE__) . '/BaseServerConnectionTests.php');
 require_once(dirname(__FILE__) . '/EncryptedPersistenceTests.php');
 require_once(dirname(__FILE__) . '/EncryptedFilePersistenceTests.php');
 require_once(dirname(__FILE__) . '/POP3ServerConnectionTests.php');
+require_once(dirname(__FILE__) . '/MailboxTests.php');
 require_once(dirname(__FILE__) . '/ServerConnectionFactoryTests.php');
 
 class ModelTests
@@ -52,6 +53,7 @@ class ModelTests
         $suite->addTestSuite('EncryptedFilePersistenceTests');
         $suite->addTestSuite('POP3ServerConnectionTests');
         $suite->addTestSuite('ServerConnectionFactoryTests');
+        $suite->addTestSuite('MailboxTests');
         return $suite;
     }
 }
