@@ -457,7 +457,7 @@ class Mailbox
             // Set the last check time.
             $this->lastChecked = time();
 
-        } catch (ConnectionException $error) {
+        } catch (Exception $e) {
             // Indicate that the mailbox status is in error, and that
             // no messages could be retrieved.
             $this->status = 'error';
