@@ -45,6 +45,15 @@ class EncryptedPersistenceTests extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test the constructor method with a pre-hashed key.
+     */
+    public function testConstructorPrehashedKey()
+    {
+        $hashedKey = hash('sha256', '', $raw_output = false);
+        $store = new EncryptedPersistence($hashedKey, true);
+    }
+
+    /**
      * Test where a null string is given to encryptData.
      *
      * @depends testConstructor
