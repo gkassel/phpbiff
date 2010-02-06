@@ -37,7 +37,7 @@ require_once(dirname(__FILE__) . '/../settings.php');
 /**
  * Import the server connection classes.
  */
-require_once(APPLICATION_PATH . '/model/serverconnection.php');
+require_once(APPLICATION_PATH . '/modules/serverconnection.php');
 
 /**
  * Class to define and manipulate mailboxes.

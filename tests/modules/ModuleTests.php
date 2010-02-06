@@ -32,7 +32,12 @@
 require_once('PHPUnit/Framework.php');
 require_once(dirname(__FILE__) . '/../testsettings.php');
 require_once(dirname(__FILE__) . '/BaseMockServerTests.php');
+require_once(dirname(__FILE__) . '/BaseServerConnectionTests.php');
+require_once(dirname(__FILE__) . '/EncryptedPersistenceTests.php');
+require_once(dirname(__FILE__) . '/EncryptedFilePersistenceTests.php');
 require_once(dirname(__FILE__) . '/POP3MockMailServerTests.php');
+require_once(dirname(__FILE__) . '/POP3ServerConnectionTests.php');
+require_once(dirname(__FILE__) . '/ServerConnectionFactoryTests.php');
 require_once(dirname(__FILE__) . '/hex2binTests.php');
 require_once(dirname(__FILE__) . '/rmrTests.php');
 
@@ -47,7 +52,12 @@ class ModuleTests
     {
         $suite = new PHPUnit_Framework_TestSuite('phpbiff - module tests');
         $suite->addTestSuite('BaseMockServerTests');
+        $suite->addTestSuite('BaseServerConnectionTests');
+        $suite->addTestSuite('EncryptedPersistenceTests');
+        $suite->addTestSuite('EncryptedFilePersistenceTests');
         $suite->addTestSuite('POP3MockMailServerTests');
+        $suite->addTestSuite('POP3ServerConnectionTests');
+        $suite->addTestSuite('ServerConnectionFactoryTests');
         $suite->addTestSuite('hex2binTests');
         $suite->addTestSuite('rmrTests');
         return $suite;

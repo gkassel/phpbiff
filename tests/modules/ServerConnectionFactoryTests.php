@@ -31,7 +31,7 @@
 
 require_once('PHPUnit/Framework.php');
 require_once(dirname(__FILE__) . '/../testsettings.php');
-require_once(APPLICATION_PATH . '/model/serverconnection.php');
+require_once(APPLICATION_PATH . '/modules/serverconnection.php');
 
 class ServerConnectionFactoryTests extends PHPUnit_Framework_TestCase
 {
