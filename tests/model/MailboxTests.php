@@ -21,7 +21,7 @@
  * Email: gkassel_at_users_dot_sourceforge_dot_net
  */
 /**
- * Test case suite for the base server conection class.
+ * Test case suite for the mailbox model class.
  *
  * @author Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
  * @copyright Copyright (c) Geoff Kassel, 2010. All rights reserved.
