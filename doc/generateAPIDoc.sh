@@ -1,3 +1,3 @@
 #!/bin/sh
 cd ..
-phpdoc -d model,modules -f *.php -t doc/api/
+phpdoc -d application,public -dn PHPBiff -dc Application -i library,tests -t doc/api/

@@ -1,0 +1,31 @@
+Installation instructions:
+
+Please copy all the phpbiff project files to your PHP5-enabled web server.
+
+As this project uses the Zend Framework, you will need to ensure that the symbolic link
+library/Zend points to the right location for the server's Zend Framework installation.
+Currently, this link points to /usr/share/php5/Zend
+
+If the Zend Framework is not installed on your web server (or you intend to use a Windows web
+server), you will need to install a copy of the Zend Framework.
+You will only need the 'minimal' version, such as that available through the following link:
+http://framework.zend.com/releases/ZendFramework-1.10.7/ZendFramework-1.10.7-minimal.zip
+
+Once you have obtained a copy of the Zend Framework, unpack it, and recursively copy the
+library/Zend directory inside the library/ directory of your installation.
+
+Next, set up a new virtual host for your installation of phpbiff.
+Here's an Apache example configuration:
+
+<VirtualHost *:80>
+    ServerName phpbiff.local
+    DocumentRoot /path/to/phpbiff/public
+ 
+    <Directory /path/to/phpbiff/public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+

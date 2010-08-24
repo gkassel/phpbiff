@@ -1,6 +1,6 @@
 <?php
-require_once('../testsettings.php');
-require_once(APPLICATION_PATH . '/model/mailbox.php');
+require_once('../../bootstrap.php');
+require_once(APPLICATION_PATH . '/models/mailbox.php');
 
 $testaccountname = 'Test account';
 $testauthmethod = 'plain';
