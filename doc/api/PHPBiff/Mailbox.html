@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Mailbox</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Mailbox</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class to define and manipulate mailboxes.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net</li>
+				<li><span class="field">copyright:</span> 2010 Geoff Kassel</li>
+				<li><span class="field">link:</span> <a href="http://phpbiff.sourceforge.net">http://phpbiff.sourceforge.net</a></li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL-2.1</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_application---models---mailbox.php.html">/application/models/mailbox.php</a> (line <span class="field">51</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$accountName" title="details" class="var-name">$accountName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$authenticationMethod" title="details" class="var-name">$authenticationMethod</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$checkFrequency" title="details" class="var-name">$checkFrequency</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../PHPBiff/ServerConnection.html">ServerConnection</a></span>
+					<a href="#$connection" title="details" class="var-name">$connection</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$displayOrder" title="details" class="var-name">$displayOrder</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$hostname" title="details" class="var-name">$hostname</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$lastChecked" title="details" class="var-name">$lastChecked</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$messageCount" title="details" class="var-name">$messageCount</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$password" title="details" class="var-name">$password</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$port" title="details" class="var-name">$port</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$protocol" title="details" class="var-name">$protocol</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$readMessageCount" title="details" class="var-name">$readMessageCount</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$status" title="details" class="var-name">$status</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">int</span>
+					<a href="#$timeout" title="details" class="var-name">$timeout</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$username" title="details" class="var-name">$username</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$accountName</span> = <span class="var-default">'New account'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$authenticationMethod</span> = <span class="var-default">'plain'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$checkFrequency</span> = <span class="var-default">60</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$displayOrder</span> = <span class="var-default">1</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$hostname</span> = <span class="var-default">'localhost'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">110</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span> = <span class="var-default">'pop3'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">10</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#check" title="details" class="method-name">check</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getAccountName" title="details" class="method-name">getAccountName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getAuthenticationMethod" title="details" class="method-name">getAuthenticationMethod</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getCheckFrequency" title="details" class="method-name">getCheckFrequency</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getDisplayOrder" title="details" class="method-name">getDisplayOrder</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getHostname" title="details" class="method-name">getHostname</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getLastChecked" title="details" class="method-name">getLastChecked</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getMessageCount" title="details" class="method-name">getMessageCount</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getPort" title="details" class="method-name">getPort</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getProtocol" title="details" class="method-name">getProtocol</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getReadMessageCount" title="details" class="method-name">getReadMessageCount</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getStatus" title="details" class="method-name">getStatus</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getTimeout" title="details" class="method-name">getTimeout</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getUsername" title="details" class="method-name">getUsername</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#markAsRead" title="details" class="method-name">markAsRead</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setAccountName" title="details" class="method-name">setAccountName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$accountName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setAuthenticationMethod" title="details" class="method-name">setAuthenticationMethod</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$authenticationMethod</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setCheckFrequency" title="details" class="method-name">setCheckFrequency</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$checkFrequency</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setDisplayOrder" title="details" class="method-name">setDisplayOrder</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$displayOrder</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setHostname" title="details" class="method-name">setHostname</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$hostname</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setPassword" title="details" class="method-name">setPassword</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setPort" title="details" class="method-name">setPort</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setProtocol" title="details" class="method-name">setProtocol</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setTimeout" title="details" class="method-name">setTimeout</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$timeout</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL</span>
+										<a href="#setUsername" title="details" class="method-name">setUsername</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$accountName" id="$accountName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$accountName</span>
+						(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mail box account name.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$authenticationMethod" id="$authenticationMethod"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$authenticationMethod</span>
+						(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authentication method (currently only 'plain' is supported.)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$checkFrequency" id="$checkFrequency"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$checkFrequency</span>
+						(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check frequency in seconds.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$connection" id="$connection"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../PHPBiff/ServerConnection.html">ServerConnection</a></span>
+			<span class="var-name">$connection</span>
+						(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Connection to the server.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$displayOrder" id="$displayOrder"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$displayOrder</span>
+						(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Display order of mailbox in mailbox view.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$hostname" id="$hostname"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$hostname</span>
+						(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hostname of the server the mailbox resides upon.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$lastChecked" id="$lastChecked"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$lastChecked</span>
+						(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Time of the last mailbox status check.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$messageCount" id="$messageCount"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$messageCount</span>
+						(line <span class="line-number">108</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Message count as at the last check.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$password" id="$password"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$password</span>
+						(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mail box access password. (Plaintext.)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$port" id="$port"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$port</span>
+						(line <span class="line-number">129</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mail box access port.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$protocol" id="$protocol"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$protocol</span>
+						(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mail box access protocol (currently only 'pop3' is supported.)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$readMessageCount" id="$readMessageCount"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$readMessageCount</span>
+						(line <span class="line-number">136</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read message count (for tracking old and new mail.)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$status" id="$status"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$status</span>
+						(line <span class="line-number">143</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current mail box status ('error', 'no mail', 'old mail', 'new mail')</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$timeout" id="$timeout"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$timeout</span>
+						(line <span class="line-number">150</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current connection timeout.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$username" id="$username"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$username</span>
+						(line <span class="line-number">157</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mail box access username.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">409</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new mailbox from the given parameters.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$accountName</span> = <span class="var-default">'New account'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$authenticationMethod</span> = <span class="var-default">'plain'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$checkFrequency</span> = <span class="var-default">60</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$displayOrder</span> = <span class="var-default">1</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$hostname</span> = <span class="var-default">'localhost'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">110</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span> = <span class="var-default">'pop3'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">10</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$accountName</span><span class="var-description">: The new account's name.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$authenticationMethod</span><span class="var-description">: The authentication method to use.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$checkFrequency</span><span class="var-description">: The mail check frequency.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$displayOrder</span><span class="var-description">: The display order of the mailbox                                      in the UI.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$hostname</span><span class="var-description">: The server hostname.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password to use with the server.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$port</span><span class="var-description">: The port upon which to connect to                                      the server.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$protocol</span><span class="var-description">: The protocol to use to connect to                                      the server.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$timeout</span><span class="var-description">: The server connection timeout to use.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The username to user with the server.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck" id="check"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">check</span> (line <span class="line-number">441</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Function to check the mailbox, updating the mail box status and  message count.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			check
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAccountName" id="getAccountName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAccountName</span> (line <span class="line-number">166</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current account name.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current account name.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getAccountName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAuthenticationMethod" id="getAuthenticationMethod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAuthenticationMethod</span> (line <span class="line-number">175</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current authentication method.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current authentication method.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getAuthenticationMethod
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCheckFrequency" id="getCheckFrequency"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCheckFrequency</span> (line <span class="line-number">184</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current check frequency.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current check frequency.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getCheckFrequency
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDisplayOrder" id="getDisplayOrder"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDisplayOrder</span> (line <span class="line-number">193</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current display order.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current display order.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getDisplayOrder
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetHostname" id="getHostname"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getHostname</span> (line <span class="line-number">202</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current server hostname.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current server hostname.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getHostname
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLastChecked" id="getLastChecked"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLastChecked</span> (line <span class="line-number">211</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current last checked time.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current last checked time.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getLastChecked
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMessageCount" id="getMessageCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMessageCount</span> (line <span class="line-number">220</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current message count.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current message count.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getMessageCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPort" id="getPort"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPort</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current server port.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current server port.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getPort
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetProtocol" id="getProtocol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getProtocol</span> (line <span class="line-number">238</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current server protocol.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current server protocol.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getProtocol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetReadMessageCount" id="getReadMessageCount"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getReadMessageCount</span> (line <span class="line-number">247</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current read message count.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current read message count.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getReadMessageCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetStatus" id="getStatus"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStatus</span> (line <span class="line-number">256</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current mailbox status.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current mailbox status.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getStatus
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTimeout" id="getTimeout"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTimeout</span> (line <span class="line-number">265</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current server connection timeout.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current server connection timeout.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getTimeout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUsername" id="getUsername"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUsername</span> (line <span class="line-number">274</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current username.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current username.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getUsername
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodmarkAsRead" id="markAsRead"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">markAsRead</span> (line <span class="line-number">484</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Function to mark the current mailbox's messages as read.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			markAsRead
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetAccountName" id="setAccountName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAccountName</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the account name to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setAccountName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$accountName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$accountName</span><span class="var-description">: The new account name.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetAuthenticationMethod" id="setAuthenticationMethod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAuthenticationMethod</span> (line <span class="line-number">296</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the authentication method to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setAuthenticationMethod
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$authenticationMethod</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$authenticationMethod</span><span class="var-description">: The new authentication method.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCheckFrequency" id="setCheckFrequency"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCheckFrequency</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the check frequency to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setCheckFrequency
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$checkFrequency</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$checkFrequency</span><span class="var-description">: The new check frequency.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDisplayOrder" id="setDisplayOrder"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDisplayOrder</span> (line <span class="line-number">318</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the mailbox display order to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setDisplayOrder
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$displayOrder</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$displayOrder</span><span class="var-description">: The new mailbox display order.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHostname" id="setHostname"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setHostname</span> (line <span class="line-number">329</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the server hostname to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setHostname
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$hostname</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$hostname</span><span class="var-description">: The new server hostname.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPassword" id="setPassword"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPassword</span> (line <span class="line-number">340</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the password to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setPassword
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The new password.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPort" id="setPort"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPort</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the server port to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setPort
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$port</span><span class="var-description">: The new server port.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetProtocol" id="setProtocol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setProtocol</span> (line <span class="line-number">362</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the server protocol to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setProtocol
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$protocol</span><span class="var-description">: The new server protocol.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTimeout" id="setTimeout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTimeout</span> (line <span class="line-number">373</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the server connection timeout to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setTimeout
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$timeout</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$timeout</span><span class="var-description">: The new server connection timeout.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUsername" id="setUsername"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setUsername</span> (line <span class="line-number">384</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the username to that given.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL</span>
+		<span class="method-name">
+			setUsername
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The new username.</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 24 Aug 2010 17:14:56 +1000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

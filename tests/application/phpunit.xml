@@ -1,0 +1,8 @@
+<phpunit bootstrap="../bootstrap.php" colors="false">
+ <testsuite name="ModelTests">
+  <file>./models/ModelTests.php</file>
+ </testsuite>
+ <testsuite name="ModuleTests">
+  <file>./modules/ModuleTests.php</file>
+ </testsuite>
+</phpunit>

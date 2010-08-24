@@ -1,0 +1,13 @@
+<phpunit bootstrap="../../bootstrap.php" colors="false">
+ <testsuite name="ModuleTests">
+  <file>BaseMockServerTests.php</file>
+  <file>BaseServerConnectionTests.php</file>
+  <file>EncryptedFilePersistenceTests.php</file>
+  <file>EncryptedPersistenceTests.php</file>
+  <file>POP3MockMailServerTests.php</file>
+  <file>POP3ServerConnectionTests.php</file>
+  <file>ServerConnectionFactoryTests.php</file>
+  <file>hex2binTests.php</file>
+  <file>rmrTests.php</file>
+ </testsuite>
+</phpunit>
