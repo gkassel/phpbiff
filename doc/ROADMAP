@@ -1,7 +1,7 @@
 This file documents the project's current status and planned future features:
 
- v0.1.0 (current version):
-   - Model code, but no user interface or controllers as yet.
+ v0.1.1 (current version):
+   - Model code, with skeleton Zend user interface and controllers.
    - Mail server support: POP3 only.
    - Mail server authentication method support: Plain/logon only.
    - Password wallet backend support: File only.
