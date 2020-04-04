@@ -2,7 +2,7 @@
 /**
  * Server connections.
  *
- * Copyright (c) Geoff Kassel, 2010. All rights reserved.
+ * Copyright (c) SG Kassel, 2010. All rights reserved.
  *
  * This file is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -26,8 +26,8 @@
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -40,8 +40,8 @@ require_once(dirname(__FILE__) . '/../Bootstrap.php');
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -52,8 +52,8 @@ class ConnectionException extends RuntimeException {}
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -160,8 +160,8 @@ interface ServerConnection {
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -381,8 +381,8 @@ class BaseServerConnection implements ServerConnection {
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -681,8 +681,8 @@ class POP3ServerConnection extends BaseServerConnection {
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */

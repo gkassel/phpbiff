@@ -2,7 +2,7 @@
 /**
  * Zend project bootstrap file.
  *
- * Copyright (c) Geoff Kassel, 2010. All rights reserved.
+ * Copyright (c) SG Kassel, 2010. All rights reserved.
  *
  * This file is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -26,8 +26,8 @@
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
@@ -57,8 +57,8 @@ $loader = Zend_Loader_Autoloader::getInstance();
  *
  * @category  Application
  * @package   PHPBiff
- * @author    Geoff Kassel gkassel_at_users_dot_sourceforce_dot_net
- * @copyright 2010 Geoff Kassel
+ * @author    SG Kassel sg_dot_kassel_dot_au_at_gmail_dot_com
+ * @copyright 2010 SG Kassel
  * @license   http://www.gnu.org/licenses/lgpl-2.1.html LGPL-2.1
  * @link      http://phpbiff.sourceforge.net
  */
