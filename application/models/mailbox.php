@@ -20,7 +20,7 @@
  * AND THERE IS NO OBLIGATION WHATSOEVER TO PROVIDE MAINTENANCE,
  * SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
- * Email: gkassel_at_users_dot_sourceforge_dot_net
+ * Email: sg_dot_kassel_dot_au_at_gmail_dot_com
  *
  * PHP Version 5.
  *
